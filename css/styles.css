@@ -510,7 +510,8 @@ img {
   color: var(--brand-color);
 }
 
-.footer-soc-title {
+.footer-title {
+  display: block;
   margin-bottom: 20px;
   font-weight: 700;
   font-size: 14px;
@@ -555,6 +556,71 @@ img {
 .footer-soc-link:focus {
   background-color: var(--brand-color);
 }
+
+/*----------стилізація форми футера ------------ */
+
+.subscribe-form {
+  margin-top: 12px;
+  margin-left: 93px;
+}
+
+.btn-subscribe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 200px;
+  height: 50px;
+
+  margin-left: 12px;
+  color: #ffffff;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  letter-spacing: 0.06em;
+
+  background-color: var(--brand-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+.subscribe {
+  display: flex;
+}
+
+.subscribe input {
+  width: 358px;
+  height: 50px;
+  background-color: inherit;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding-left: 16px;
+}
+
+.subscribe input::placeholder {
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  align-items: center;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.substrime-icon{
+  margin-left: 10px;
+}
+
+
+
+
+
+/* -----------стилізувати коли ввів дані------------- */
+
+
+
+
+
+
 
 /*----------стилізація portfolio.html-----------*/
 .portfolio-list .title {
@@ -718,4 +784,49 @@ img {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}
+
+textarea {
+  resize: none;
+}
+
+.modal-form {
+  width: 100%;
+
+  padding: 40px;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-field input {
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-field label {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: #757575;
+}
+
+.form-field input::placeholder {
+}
+
+.comment {
+  height: 120px;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
 }
