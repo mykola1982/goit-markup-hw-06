@@ -476,14 +476,8 @@ img {
 
 .footer .container {
   display: flex;
-}
-
-.footer-contact {
-  margin-right: 70px;
-}
-
-.footer-soc {
-  margin-top: 12px;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 /*стилізація контактів футера*/
@@ -559,11 +553,6 @@ img {
 
 /*----------стилізація форми футера ------------ */
 
-.subscribe-form {
-  margin-top: 12px;
-  margin-left: 93px;
-}
-
 .btn-subscribe {
   display: flex;
   align-items: center;
@@ -579,26 +568,40 @@ img {
   font-size: 16px;
   line-height: calc(30 / 16);
   letter-spacing: 0.06em;
-
   background-color: var(--brand-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--brand-color);
   border-radius: 4px;
+
+  transition: box-shadow 250ms var(--timing-function);
 }
-.subscribe {
+
+.btn-subscribe:hover,
+.btn-subscribe:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.subscribe-form {
   display: flex;
 }
 
-.subscribe input {
+.subscribe-form input {
   width: 358px;
   height: 50px;
-  background-color: inherit;
+  background-color: transparent;
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   padding-left: 16px;
+  outline: none;
+  transition: border-color 250ms var(--timing-function);
 }
 
-.subscribe input::placeholder {
+.subscribe-form input:hover,
+.subscribe-form input:focus {
+  border-color: var(--brand-color);
+}
+
+.subscribe-form input::placeholder {
   font-size: 16px;
   line-height: calc(20 / 16);
   align-items: center;
@@ -606,21 +609,9 @@ img {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.substrime-icon{
+.substrime-icon {
   margin-left: 10px;
 }
-
-
-
-
-
-/* -----------стилізувати коли ввів дані------------- */
-
-
-
-
-
-
 
 /*----------стилізація portfolio.html-----------*/
 .portfolio-list .title {
@@ -657,7 +648,8 @@ img {
   border: transparent;
   border-radius: 4px;
 
-  transition: background-color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
 }
 
 .portfolio-btn:hover,
@@ -759,6 +751,8 @@ img {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
+  padding: 40px;
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
@@ -778,6 +772,17 @@ img {
 
   align-items: center;
   justify-content: center;
+
+  transition: color 250ms var(--timing-function);
+}
+
+.modal-close-icon {
+  fill: currentColor;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  color: var(--brand-color);
 }
 
 .is-hidden {
@@ -786,17 +791,19 @@ img {
   pointer-events: none;
 }
 
-textarea {
-  resize: none;
+/* --------- стилізація форми модального вікна --------- */
+
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+  margin-bottom: 12px;
+  display: block;
 }
 
-.modal-form {
-  width: 100%;
-
-  padding: 40px;
-  /* margin-left: auto;
-  margin-right: auto; */
-}
 
 .form-field {
   display: flex;
@@ -804,13 +811,7 @@ textarea {
   margin-bottom: 10px;
 }
 
-.form-field input {
-  height: 40px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-}
-
-.form-field label {
+.modal-label {
   margin-bottom: 4px;
   font-size: 12px;
   line-height: calc(14 / 12);
@@ -818,10 +819,33 @@ textarea {
   color: #757575;
 }
 
-.form-field input::placeholder {
+.input-wrap {
+  position: relative;
 }
 
-.comment {
+
+.modal-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  padding-left: 42px;
+  transition: border-color 250ms var(--timing-function);
+
+}
+
+.modal-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  fill: currentColor;
+  transition: color 250ms var(--timing-function);
+}
+
+
+.form-field textarea {
   height: 120px;
   padding-top: 12px;
   padding-right: 16px;
@@ -829,4 +853,102 @@ textarea {
   padding-left: 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: none;
+  resize: none;
+  transition: border-color 250ms var(--timing-function);
+
+}
+
+.comment-field {
+  margin-bottom: 20px;
+}
+
+
+.form-field textarea::placeholder {
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-input:focus,
+.form-field textarea:focus {
+  border-color: var(--brand-color);
+}
+
+.modal-input:focus+.modal-icon {
+  color: var(--brand-color);
+}
+
+
+.check-field {
+  margin-bottom: 30px;
+}
+
+
+.check-label {
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  letter-spacing: 0.03em;
+  color: #757575;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-label span {
+
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  margin-right: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.check-icon {
+  fill: transparent;
+}
+
+.modal-check:checked+.check-label span {
+  background-color: var(--brand-color);
+  border: none;
+}
+
+.modal-check:checked+.check-label .check-icon {
+  fill: #ffffff;
+}
+
+
+.check-label a{margin-left: 4px;}
+
+.modal-send-btn {
+  display: block;
+  width: 200px;
+  height: 50px;
+  color: #ffffff;
+  background-color: var(--brand-color);
+
+  margin-left: auto;
+  margin-right: auto;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--brand-color);
+  border-radius: 4px;
+
+  transition: background-color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
+}
+
+.modal-send-btn:hover,
+.modal-send-btn:focus {
+  background-color: #188ce8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
