@@ -821,6 +821,7 @@ img {
 
 .input-wrap {
   position: relative;
+  color: #212121;
 }
 
 
@@ -909,6 +910,7 @@ img {
 }
 
 
+
 .check-icon {
   fill: transparent;
 }
@@ -923,7 +925,10 @@ img {
 }
 
 
-.check-label a{margin-left: 4px;}
+
+.check-label a{
+  color: #2196f3;
+  margin-left: 4px;}
 
 .modal-send-btn {
   display: block;
@@ -952,3 +957,5 @@ img {
   background-color: #188ce8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
+
+  
